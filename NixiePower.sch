@@ -16807,6 +16807,7 @@ grid 2.54 mm</description>
 <part name="IC3" library="own-collection" deviceset="IRS44273L" device=""/>
 <part name="R2" library="rcl" deviceset="R-TRIMM" device="4G/J" value="20k"/>
 <part name="Q1" library="own-collection" deviceset="IRF740" device="D2PAK" value="IRF740D2PAK"/>
+<part name="D1" library="diode" deviceset="DIODE-" device="DO214AA" value="MURS120"/>
 </parts>
 <sheets>
 <sheet>
@@ -16826,9 +16827,9 @@ grid 2.54 mm</description>
 <instance part="R3" gate="G$1" x="81.28" y="35.56"/>
 <instance part="R4" gate="G$1" x="66.04" y="17.78" rot="R90"/>
 <instance part="GND5" gate="1" x="66.04" y="7.62"/>
-<instance part="PAD1" gate="1" x="-10.16" y="55.88"/>
-<instance part="PAD2" gate="1" x="-10.16" y="48.26"/>
-<instance part="GND6" gate="1" x="0" y="43.18"/>
+<instance part="PAD1" gate="1" x="-17.78" y="55.88"/>
+<instance part="PAD2" gate="1" x="-17.78" y="48.26"/>
+<instance part="GND6" gate="1" x="-5.08" y="43.18"/>
 <instance part="PAD3" gate="1" x="208.28" y="78.74" rot="R180"/>
 <instance part="PAD4" gate="1" x="208.28" y="58.42" rot="R180"/>
 <instance part="GND7" gate="1" x="200.66" y="50.8"/>
@@ -16846,12 +16847,16 @@ grid 2.54 mm</description>
 <instance part="R7" gate="G$1" x="152.4" y="48.26"/>
 <instance part="GND12" gate="1" x="165.1" y="40.64"/>
 <instance part="P+3" gate="VCC" x="38.1" y="66.04"/>
-<instance part="P+5" gate="VCC" x="0" y="60.96"/>
+<instance part="P+5" gate="VCC" x="-5.08" y="63.5"/>
 <instance part="R8" gate="G$1" x="86.36" y="68.58" rot="R270"/>
 <instance part="P+4" gate="VCC" x="86.36" y="76.2"/>
 <instance part="IC3" gate="G$1" x="129.54" y="53.34"/>
 <instance part="R2" gate="G$1" x="66.04" y="30.48" rot="R180"/>
 <instance part="Q1" gate="G$1" x="162.56" y="50.8"/>
+<instance part="D1" gate="G$1" x="-10.16" y="55.88" smashed="yes">
+<attribute name="NAME" x="-12.7" y="58.9026" size="1.778" layer="95"/>
+<attribute name="VALUE" x="-12.7" y="51.0286" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -16912,8 +16917,8 @@ grid 2.54 mm</description>
 <segment>
 <pinref part="PAD2" gate="1" pin="P"/>
 <pinref part="GND6" gate="1" pin="GND"/>
-<wire x1="-7.62" y1="48.26" x2="0" y2="48.26" width="0.1524" layer="91"/>
-<wire x1="0" y1="48.26" x2="0" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="48.26" x2="-5.08" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="48.26" x2="-5.08" y2="45.72" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND7" gate="1" pin="GND"/>
@@ -17001,12 +17006,6 @@ grid 2.54 mm</description>
 <junction x="15.24" y="78.74"/>
 </segment>
 <segment>
-<pinref part="PAD1" gate="1" pin="P"/>
-<pinref part="P+5" gate="VCC" pin="VCC"/>
-<wire x1="-7.62" y1="55.88" x2="0" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="0" y1="55.88" x2="0" y2="58.42" width="0.1524" layer="91"/>
-</segment>
-<segment>
 <pinref part="IC1" gate="G$1" pin="DC"/>
 <pinref part="P+3" gate="VCC" pin="VCC"/>
 <wire x1="53.34" y1="60.96" x2="38.1" y2="60.96" width="0.1524" layer="91"/>
@@ -17019,6 +17018,12 @@ grid 2.54 mm</description>
 <segment>
 <pinref part="R8" gate="G$1" pin="1"/>
 <pinref part="P+4" gate="VCC" pin="VCC"/>
+</segment>
+<segment>
+<pinref part="D1" gate="G$1" pin="C"/>
+<pinref part="P+5" gate="VCC" pin="VCC"/>
+<wire x1="-7.62" y1="55.88" x2="-5.08" y2="55.88" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="55.88" x2="-5.08" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -17064,6 +17069,13 @@ grid 2.54 mm</description>
 <pinref part="R2" gate="G$1" pin="E"/>
 <pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="66.04" y1="25.4" x2="66.04" y2="22.86" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$12" class="0">
+<segment>
+<pinref part="PAD1" gate="1" pin="P"/>
+<pinref part="D1" gate="G$1" pin="A"/>
+<wire x1="-15.24" y1="55.88" x2="-12.7" y2="55.88" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
